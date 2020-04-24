@@ -16,7 +16,7 @@
 
 <div class="ui grid posts">
     <app-article
-        *ngFor="let currArticle of articles"
+        *ngFor="let currArticle of sortedArticles()"
         [article] = "currArticle">
     </app-article>
 </div>
