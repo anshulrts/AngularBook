@@ -1,1 +1,26 @@
-<p>App Component</p>
+<div class="ui raised segment">
+    <form
+        [formGroup]="myForm"
+        (ngSubmit)="onSubmit(myForm)"
+        class="ui form"
+    >
+        <label for="username">Username</label>
+        <input
+            formControlName = "username"
+            id="username"
+            type="text"
+        >
+
+        <label for="password">Password</label>
+        <input
+            formControlName="password"
+            id="password"
+            type="text"
+        >
+
+        <button type="submit" class="ui button">Submit</button>
+
+
+
+    </form>
+</div>
