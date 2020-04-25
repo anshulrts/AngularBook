@@ -14,7 +14,11 @@
             name="sku"
             ngModel
             #skuName="ngModel"
+            required
         >
+        <div *ngIf="!skuName.valid && skuName.touched">
+            <div class="alert">SKU name is required</div>
+        </div>
     </div>
     <button type="submit" class="ui button">Submit</button>
 
