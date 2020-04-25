@@ -1,7 +1,7 @@
 <div class="ui raised segment">
     <h2 class="ui header">Demo Form: SKU</h2>
     <form #f="ngForm"
-        (ngSubmit)="onSubmit(f)"
+        (ngSubmit)="onSubmit(f); f.reset();"
         class="ui form"
     >
 
@@ -24,7 +24,7 @@
             <div *ngIf="skuName.errors.maxlength">Max length should be 8</div>
         </div>
     </div>
-    <button type="submit" class="ui button">Submit</button>
+    <button type="submit" class="ui button" [disabled]="f.form.invalid">Submit</button>
 
     </form>
 </div>
