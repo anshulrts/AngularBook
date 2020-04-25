@@ -11,7 +11,8 @@
             id="skuInput"
             placeholder="SKU"
             name="sku"
-            #skuName
+            ngModel
+            #skuName="ngModel"
         >
     </div>
     <button (click)="check(skuName)" class="ui button">Submit</button>

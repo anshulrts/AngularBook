@@ -8,14 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class DemoFormSkuComponent implements OnInit {
 
     sku: string = "abc";
-    constructor() { }
+  constructor() { }
 
-    ngOnInit(): void {
-    }
+  ngOnInit(): void {
+  }
 
-    check(c: HTMLInputElement): boolean {
-        console.log(c);
-        return false;
-    }
+  onSubmit(f: any): void {
+      console.log(f);
+  }
+
+  check(c: any): boolean {
+    console.log(c);
+    return false;
+}
 
 }
