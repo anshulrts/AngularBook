@@ -1,6 +1,7 @@
 <div class="ui raised segment">
     <h2 class="ui header">Demo Form: SKU</h2>
-    <form
+    <form #f="ngForm"
+        (ngSubmit)="onSubmit(f)"
         class="ui form"
     >
 
@@ -15,7 +16,7 @@
             #skuName="ngModel"
         >
     </div>
-    <button (click)="check(skuName)" class="ui button">Submit</button>
+    <button type="submit" class="ui button">Submit</button>
 
     </form>
 </div>

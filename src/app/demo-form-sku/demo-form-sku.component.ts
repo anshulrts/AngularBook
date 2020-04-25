@@ -17,9 +17,4 @@ export class DemoFormSkuComponent implements OnInit {
       console.log(f);
   }
 
-  check(c: any): boolean {
-    console.log(c);
-    return false;
-}
-
 }
