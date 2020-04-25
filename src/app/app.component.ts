@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +9,26 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class AppComponent {
     title = 'AngularBook';
 
-    myForm: FormGroup;
-
+    // myForm: FormGroup;
+    myForm = new FormGroup({
+        username: new FormControl('', [Validators.required, Validators.minLength(3)]),
+        password: new FormControl()
+    });
     constructor() {
-        this.myForm = new FormGroup({
-            username: new FormControl(),
-            password: new FormControl()
-        });
+
     }
 
+    // form = new FormGroup({
+    //     username: new FormControl('',[
+    //         Validators.required,
+    //         Validators.minLength(3),
+    //         SignupValidator.cannotContainSpace
+    //     ]),
+    //     password: new FormControl()
+    // });
+
     onSubmit(f: any): void {
+        debugger;
         console.log(f);
     }
 

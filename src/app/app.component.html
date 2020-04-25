@@ -10,6 +10,12 @@
             id="username"
             type="text"
         >
+        <!-- {{username}} -->
+        <div class="alert" *ngIf="username.touched && username.invalid">
+            <div *ngIf="username.errors.required">Username is required</div>
+            <div *ngIf="username.errors.minlength">Min Length is {{username.minlength.Length}}</div>
+        </div>
+
 
         <label for="password">Password</label>
         <input
