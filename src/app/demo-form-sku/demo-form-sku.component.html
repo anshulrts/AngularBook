@@ -15,9 +15,13 @@
             ngModel
             #skuName="ngModel"
             required
+            minlength="3"
+            maxlength="8"
         >
-        <div *ngIf="!skuName.valid && skuName.touched">
-            <div class="alert">SKU name is required</div>
+        <div class="alert" *ngIf="skuName.invalid && (skuName.dirty || skuName.touched)">
+            <div *ngIf="skuName.errors.required">SKU name is required</div>
+            <div *ngIf="skuName.errors.minlength">Min length should be 3</div>
+            <div *ngIf="skuName.errors.maxlength">Max length should be 8</div>
         </div>
     </div>
     <button type="submit" class="ui button">Submit</button>
