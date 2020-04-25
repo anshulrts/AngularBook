@@ -6,14 +6,14 @@
     >
         <label for="username">Username</label>
         <input
-            formControlName = "username"
+            [formControl]="myForm.controls.username"
             id="username"
             type="text"
         >
 
         <label for="password">Password</label>
         <input
-            formControlName="password"
+            [formControl]="myForm.controls.password"
             id="password"
             type="text"
         >
