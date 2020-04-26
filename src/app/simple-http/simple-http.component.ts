@@ -21,6 +21,9 @@ export class SimpleHttpComponent implements OnInit {
             .subscribe(data => {
                 this.data = data
                 this.loading = false;
+            }, error => {
+                alert('An unexpected error occurred');
+                console.log(error);
             });
 
     }
