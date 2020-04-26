@@ -18,10 +18,12 @@ export class SimpleHttpComponent implements OnInit {
         this.loading = true;
 
         this._simpleHttpService.getPosts()
-            .subscribe(data => {
+            .subscribe(
+            data => {
                 this.data = data
                 this.loading = false;
-            }, error => {
+            },
+            error => {
                 alert('An unexpected error occurred');
                 console.log(error);
             });
