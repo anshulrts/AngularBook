@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { SimpleHttpService } from '../services/simplehttp.service';
 
 @Component({
   selector: 'simple-http',
@@ -10,15 +10,14 @@ export class SimpleHttpComponent implements OnInit {
     data: Object;
     loading: boolean;
 
-    constructor(private http: HttpClient) {
+    constructor(private _simpleHttpService: SimpleHttpService) {
 
     }
 
     makeRequest(): void {
         this.loading = true;
 
-        this.http
-            .get('https://jsonplaceholder.typicode.com/posts/1')
+        this._simpleHttpService.getPosts()
             .subscribe(data => {
                 this.data = data
                 this.loading = false;
