@@ -1,18 +1,16 @@
-import { Directive, HostListener } from '@angular/core';
+import { Directive, HostListener, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[appInputFormat]'
 })
 export class InputFormatDirective {
 
-    @HostListener('focus') onFocus() {
-        console.log('on Focus');
-    }
+    constructor(private el: ElementRef) { }
 
     @HostListener('blur') onBlur() {
-        console.log('on Blur');
-    }
+        let value: string = this.el.nativeElement.value;
 
-    constructor() { }
+        this.el.nativeElement.value = value.toLowerCase();
+    }
 
 }
